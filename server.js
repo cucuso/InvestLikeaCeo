@@ -18,6 +18,8 @@ mongoose.connect(configDB.url);
 
 var getFinancialData = require('./financial-data.js');
 
+getFinancialData();
+
 //get financial data every day ===========================
 setInterval(getFinancialData, 24*60*60*1000);
 
