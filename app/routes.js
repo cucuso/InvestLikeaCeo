@@ -1,8 +1,9 @@
 
 var fs = require('fs');
 
+
 // app/routes.js
-module.exports = function(app) {
+module.exports = function(app,getFinancialData) {
 
 // =====================================
 // API   ===============================
@@ -12,7 +13,17 @@ app.post('/v1/stocks',isAuthenticated, function(req, res) {
       res.json(JSON.parse(fs.readFileSync('./output/latest.js', 'utf8')));
 
     });
-}
+
+
+app.post('/v1/stocks/refresh',isAuthenticated, function(req, res) {
+
+
+      getFinancialData();
+
+        });
+   }
+
+
 
 
 function isAuthenticated(req,res,next){

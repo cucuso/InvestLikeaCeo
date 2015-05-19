@@ -40,7 +40,7 @@ module.exports = function(){request('http://finviz.com/insidertrading.ashx?tc=1'
          }
         });
 
-
+        if(JSON.stringify(map) !== '{}')
         prepareFinancialData(map);
 
         for(var ticker in map){
@@ -56,6 +56,8 @@ module.exports = function(){request('http://finviz.com/insidertrading.ashx?tc=1'
 
 
  var prepareFinancialData = function (map){
+
+
 
    console.log(map);
    var source = fs.createReadStream('./output/latest.js');
