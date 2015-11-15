@@ -1,1 +1,7 @@
-dbBackup/
+server/dbBackup/
+app/.gradle
+app/local.properties
+app/.idea/workspace.xml
+app/.idea/libraries
+app/.DS_Store
+app//build
